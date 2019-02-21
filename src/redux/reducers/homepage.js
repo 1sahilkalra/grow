@@ -5,7 +5,7 @@ const InitialState = {
 export default (state = InitialState, action) => {
   switch (action.type) {
     case "HOME_ACTION":
-      return { result: "hello from updated state" };
+      return { result: action.payload };
     default:
       return state;
   }
