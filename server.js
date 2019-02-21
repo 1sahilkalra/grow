@@ -9,6 +9,7 @@ import { renderToString } from "react-dom/server"
 const app = Express()
 const port = 3000
 
+//enable folder access to server
 app.use("/dist", Express.static("dist"))
 
 app.use(handleRender)
