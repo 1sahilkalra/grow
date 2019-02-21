@@ -1,0 +1,48 @@
+{
+  "name": "grow",
+  "version": "1.0.0",
+  "description": "A simple app to showcase react implementation from scratch using webpack and babel",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1sahilkalra/grow.git"
+  },
+  "keywords": [
+    "react",
+    "spa",
+    "webpack",
+    "learning"
+  ],
+  "author": "Sahil Kalra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/1sahilkalra/grow/issues"
+  },
+  "homepage": "https://github.com/1sahilkalra/grow#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pretest": "./node_modules/.bin/eslint --fix --ignore-path .gitignore .",
+    "start": "webpack-dev-server --mode development --watch --hot",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "html-webpack-plugin": "^3.2.0",
+    "prettier": "^1.16.4",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.0"
+  }
+}
