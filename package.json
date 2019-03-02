@@ -22,16 +22,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "pretest": "./node_modules/.bin/eslint --fix --ignore-path .gitignore .",
-    "dev": "webpack-dev-server --mode development --watch --hot",
+    "client": "webpack-dev-server --mode development --watch --hot",
+    "client-live": "webpack-dev-server && nodemon client.js",
     "build": "webpack",
-    "server": "webpack && node start.js"
+    "server": "webpack && nodemon start.js"
   },
   "dependencies": {
     "express": "^4.16.4",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
-    "react-redux": "^6.0.1",
+    "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
+    "react-redux": "^6.0.1",
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
@@ -47,6 +49,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
     "html-webpack-plugin": "^3.2.0",
+    "nodemon": "^1.18.10",
     "prettier": "^1.16.4",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3",

@@ -11,9 +11,9 @@ const dispatchProps = dispatch => ({
   updateStore: msg => dispatch(updateStore(msg))
 })
 
-const App = props => {
+const About = props => {
   console.log(props)
-
+  
   function click() {
     console.log("clicked")
     props.updateStore("updated using click event")
@@ -21,9 +21,7 @@ const App = props => {
   return (
     <div>
       <Navigation />
-      <h1>Home Page</h1>
-
-      <h2>Hello there freind, git established!!! {props.greeting}</h2>
+      <h1>About Page</h1>
       <button onClick={click}>update store</button>
     </div>
   )
@@ -32,4 +30,4 @@ const App = props => {
 export default connect(
   stateProps,
   dispatchProps
-)(App)
+)(About)

@@ -3,8 +3,9 @@ import Express from "express"
 import React from "react"
 import configureStore from "./src/redux/store"
 import { Provider } from "react-redux"
-import App from "./src/App"
+import Routes from "./Routes"
 import { renderToString } from "react-dom/server"
+import { StaticRouter } from 'react-router-dom';
 
 const app = Express()
 const port = 3000
@@ -14,14 +15,28 @@ app.use("/dist", Express.static("dist"))
 
 app.use(handleRender)
 
+// to handle bad url by routing it from index 
+// app.get('/*', function(req, res) {
+//   res.sendFile(path.join(__dirname, './index.html'), function(err) {
+//     if (err) {
+//       res.status(500).send(err)
+//     }
+//   })
+// })
+
 function handleRender(req, res) {
+  const context = {}
   // Create a new Redux store instance
   const store = configureStore()
 
   // Render the component to a string
   const html = renderToString(
     <Provider store={store}>
-      <App />
+
+      <StaticRouter location={req.url} context={context}>
+        <Routes />
+      </StaticRouter>
+     
     </Provider>
   )
 

@@ -5,8 +5,8 @@ module.exports = {
   entry: "./client.js",
   output: {
     filename: "bundle.js",
-    path: path.join(__dirname, "dist")
-    // publicPath: "/"
+    path: path.join(__dirname, "dist"),
+    publicPath: "/"
   },
   plugins: [
     new HWP({
@@ -25,6 +25,7 @@ module.exports = {
     ]
   },
   devServer: {
-    contentBase: path.join(__dirname, "dist")
+    contentBase: path.join(__dirname, "dist"),
+    historyApiFallback: true,
   }
 }
